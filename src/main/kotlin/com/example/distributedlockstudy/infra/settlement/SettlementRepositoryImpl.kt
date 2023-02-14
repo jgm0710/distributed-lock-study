@@ -12,7 +12,7 @@ class SettlementRepositoryImpl(
 ) : SettlementRepository {
 
     override fun save(settlement: Settlement): Settlement {
-        return settlementJpaRepository.save(settlement)
+        return settlementJpaRepository.saveAndFlush(settlement)
     }
 
     override fun existsByOrderId(orderId: UUID): Boolean {

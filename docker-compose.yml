@@ -9,5 +9,16 @@ services:
       - redis_data:/data
     ports:
       - "6400:6379"
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: distributelockstudy
+      POSTGRES_PASSWORD: distributelockstudy
+      POSTGRES_DB: distributelockstudy
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    ports:
+      - "5235:5432"
 volumes:
   redis_data:

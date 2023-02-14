@@ -4,7 +4,7 @@ import java.util.*
 
 interface SettlementLockManager {
 
-    fun acquireStoreLock(storeId: UUID) : Boolean
+    fun acquireStoreLock(storeId: UUID)
 
-    fun releaseStoreLock(storeId: UUID) : Boolean
+    fun releaseStoreLock(storeId: UUID)
 }

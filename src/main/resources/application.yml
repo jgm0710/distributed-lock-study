@@ -5,3 +5,18 @@ spring:
     host: 127.0.0.1
     port: 6400
     password: distributelockstudy
+  datasource:
+    url: jdbc:postgresql://localhost:5235/distributelockstudy
+    username: distributelockstudy
+    password: distributelockstudy
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        show_sql: false
+        format_sql: true
+        use_sql_comments: false
+

@@ -16,7 +16,10 @@ repositories {
 }
 
 dependencies {
+    // redis with redisson
     implementation("org.springframework.boot:spring-boot-starter-data-redis")
+    implementation("org.redisson:redisson-spring-boot-starter:3.15.5")
+
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -24,6 +27,7 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("com.h2database:h2:2.1.214")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.postgresql:postgresql")
 }
 
 tasks.withType<KotlinCompile> {

@@ -1,5 +1,6 @@
 package com.example.distributedlockstudy.domain
 
+import org.springframework.boot.ansi.AnsiColors.BitDepth
 import java.math.BigDecimal
 import java.math.RoundingMode
 import java.time.OffsetDateTime
@@ -47,10 +48,23 @@ open class Settlement(
             totalBrokerageFeeOfMonth: BigDecimal,
             settlementPrice: BigDecimal,
         ): BigDecimal {
-            return if (totalBrokerageFeeOfMonth >= BigDecimal(60000)) {
-                BigDecimal.ZERO
+//            val settlementFee = settlementPrice.divide(BigDecimal(10), 2, RoundingMode.HALF_UP)
+//
+//            val nowTotalSettlementFee = totalBrokerageFeeOfMonth + settlementFee
+//
+//
+//            val high = BigDecimal(60000)
+//
+//            return if (nowTotalSettlementFee > high) {
+//                return BigDecimal.ZERO
+//            } else {
+//                settlementFee
+//            }
+
+            if (totalBrokerageFeeOfMonth.compareTo(BigDecimal(60000)) >= 0) {
+                return BigDecimal.ZERO
             } else {
-                settlementPrice.divide(BigDecimal(10), 2, RoundingMode.HALF_UP)
+                return BigDecimal(1000)
             }
         }
     }
